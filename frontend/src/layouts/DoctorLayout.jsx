@@ -1,0 +1,4 @@
+import { NavLink, Outlet, useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
+import { Icon } from '../components/States';
+export default function DoctorLayout() { const auth=useAuth(); const nav=useNavigate(); async function out(){await auth.logout();nav('/');} return <div className="doctor-app"><header className="doctor-topbar"><button className="doctor-brand" onClick={()=>nav('/doctor')}><span className="doctor-mark">✚</span><span>Aarogya<span>Saar</span><small>Clinical workspace</small></span></button><nav><NavLink to="/doctor"><Icon name="queue"/>Today’s queue</NavLink><NavLink to="/doctor/consultations"><Icon name="history"/>Consultations</NavLink></nav><div className="doctor-user"><span>{auth.user?.name}</span><button className="btn btn-light" onClick={out}>Sign out</button></div></header><main className="doctor-main"><Outlet/></main></div> }

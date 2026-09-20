@@ -1,0 +1,22 @@
+# Environment variables
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Node
+node_modules/
+dist/
+
+# macOS
+.DS_Store
+
+# Local databases
+*.db
+
+# Runtime uploads
+backend/uploads/ 
